@@ -35,3 +35,7 @@ def atualizar_contato(agenda):
             contato['telefone'] = input("Novo telefone: ") or contato['telefone']
             return
     print("Contato não encontrado.")    
+
+def remover_contato(agenda):
+    nome = input("Nome do contato a remover: ")
+    agenda[:] = [c for c in agenda if c['nome'] != nome]    
