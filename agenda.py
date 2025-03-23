@@ -51,4 +51,31 @@ def favoritar_contato(agenda):
 def listar_favoritos(agenda):
     for contato in agenda:
         if contato['favorito']:
-            print(f"{contato['nome']} - {contato['telefone']} (Favorito)")    
+            print(f"{contato['nome']} - {contato['telefone']} (Favorito)")
+
+def main():
+    agenda = []
+    while True:
+        exibir_menu()
+        opcao = input("Escolha uma opção: ")
+        if opcao == '1':
+            adicionar_contato(agenda)
+        elif opcao == '2':
+            listar_contatos(agenda)
+        elif opcao == '3':
+            buscar_contato(agenda)
+        elif opcao == '4':
+            atualizar_contato(agenda)
+        elif opcao == '5':
+            remover_contato(agenda)
+        elif opcao == '6':
+            favoritar_contato(agenda)
+        elif opcao == '7':
+            listar_favoritos(agenda)
+        elif opcao == '8':
+            break
+        else:
+            print("Opção inválida!")
+
+if __name__ == "__main__":
+    main()
