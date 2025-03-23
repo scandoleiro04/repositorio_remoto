@@ -47,3 +47,8 @@ def favoritar_contato(agenda):
             contato['favorito'] = not contato['favorito']
             return
     print("Contato não encontrado.")       
+
+def listar_favoritos(agenda):
+    for contato in agenda:
+        if contato['favorito']:
+            print(f"{contato['nome']} - {contato['telefone']} (Favorito)")    
