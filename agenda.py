@@ -19,3 +19,11 @@ def adicionar_contato(agenda):
 def listar_contatos(agenda):
     for contato in sorted(agenda, key=lambda x: x['nome']):
         print(f"{contato['nome']} - {contato['telefone']} {'(Favorito)' if contato['favorito'] else ''}")
+
+def buscar_contato(agenda):
+    nome = input("Nome do contato: ")
+    for contato in agenda:
+        if contato['nome'] == nome:
+            print(f"{contato['nome']} - {contato['telefone']} {'(Favorito)' if contato['favorito'] else ''}")
+            return
+    print("Contato não encontrado.")
