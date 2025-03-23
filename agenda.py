@@ -14,4 +14,8 @@ def adicionar_contato(agenda):
     nome = input("Nome: ")
     telefone = input("Telefone: ")
     favorito = input("Favorito (s/n): ").lower() == 's'
-    agenda.append({"nome": nome, "telefone": telefone, "favorito": favorito})    
+    agenda.append({"nome": nome, "telefone": telefone, "favorito": favorito}) 
+
+def listar_contatos(agenda):
+    for contato in sorted(agenda, key=lambda x: x['nome']):
+        print(f"{contato['nome']} - {contato['telefone']} {'(Favorito)' if contato['favorito'] else ''}")
