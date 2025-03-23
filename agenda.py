@@ -10,3 +10,8 @@ def exibir_menu():
     7. Listar contatos favoritos
     8. Sair
     """)
+def adicionar_contato(agenda):
+    nome = input("Nome: ")
+    telefone = input("Telefone: ")
+    favorito = input("Favorito (s/n): ").lower() == 's'
+    agenda.append({"nome": nome, "telefone": telefone, "favorito": favorito})    
