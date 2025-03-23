@@ -27,3 +27,11 @@ def buscar_contato(agenda):
             print(f"{contato['nome']} - {contato['telefone']} {'(Favorito)' if contato['favorito'] else ''}")
             return
     print("Contato não encontrado.")
+
+def atualizar_contato(agenda):
+    nome = input("Nome do contato a atualizar: ")
+    for contato in agenda:
+        if contato['nome'] == nome:
+            contato['telefone'] = input("Novo telefone: ") or contato['telefone']
+            return
+    print("Contato não encontrado.")    
