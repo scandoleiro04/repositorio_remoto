@@ -38,4 +38,12 @@ def atualizar_contato(agenda):
 
 def remover_contato(agenda):
     nome = input("Nome do contato a remover: ")
-    agenda[:] = [c for c in agenda if c['nome'] != nome]    
+    agenda[:] = [c for c in agenda if c['nome'] != nome] 
+
+def favoritar_contato(agenda):
+    nome = input("Nome do contato: ")
+    for contato in agenda:
+        if contato['nome'] == nome:
+            contato['favorito'] = not contato['favorito']
+            return
+    print("Contato não encontrado.")       
